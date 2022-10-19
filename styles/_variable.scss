@@ -1,0 +1,23 @@
+$strongcyan: hsl(171, 66%, 44%);
+$lightblue: hsl(233, 100%, 69%);
+$darkgrayishblue: hsl(210, 10%, 33%);
+$grayisblue: hsl(201, 11%, 66%);
+
+$family: "Bai Jamjuree", sans-serif;
+
+@mixin buttons() {
+  letter-spacing: 0.5px;
+  font-family: $family;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+@mixin btnhover($bg-color: hsl(160, 37%, 67%)) {
+  background-color: $bg-color;
+}

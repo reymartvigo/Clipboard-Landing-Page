@@ -1,0 +1,125 @@
+@use "variable";
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 8rem 2rem;
+  text-align: center;
+  background-image: url("../image/bg-header-mobile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  .logo {
+    width: 100%;
+    margin-bottom: 3rem;
+    img {
+      width: 45%;
+    }
+  }
+
+  .header-content {
+    width: 100%;
+    h1 {
+      line-height: 2.5rem;
+      color: variable.$darkgrayishblue;
+      margin-bottom: 2rem;
+    }
+    p {
+      line-height: 1.2rem;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      color: variable.$grayisblue;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .ios {
+      -webkit-box-shadow: 0px 3px 0px 0px rgb(29, 136, 120);
+      box-shadow: 0px 3px 0px 0px rgb(29, 136, 120);
+      background-color: variable.$strongcyan;
+    }
+    .ios:hover {
+      @include variable.btnhover($bg-color: hsl(160, 37%, 67%));
+    }
+    .mac {
+      -webkit-box-shadow: 0px 3px 0px 0px hsl(233, 96%, 55%);
+      box-shadow: 0px 3px 0px 0px hsl(233, 96%, 55%);
+      background-color: variable.$lightblue;
+    }
+    .mac:hover {
+      @include variable.btnhover($bg-color: hsl(233, 90%, 74%));
+    }
+
+    button {
+      @include variable.buttons;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 8rem 10rem;
+    background-image: url("../image/bg-header-desktop.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    .logo {
+      img {
+        width: 12%;
+      }
+    }
+    .header-content {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .buttons {
+      padding: 0 6rem;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header {
+    padding: 8rem 15rem;
+    .logo {
+      img {
+        width: 10%;
+      }
+    }
+    .header-content {
+      h1 {
+        font-size: 2.8rem;
+      }
+      p {
+        padding: 0 5.7rem;
+        line-height: 2rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    .buttons {
+      padding: 0 15rem;
+      flex-direction: row;
+      gap: 1rem;
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
+}
